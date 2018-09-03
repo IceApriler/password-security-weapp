@@ -28,10 +28,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    /**
+     * 键盘点击
+     */
     buttonHandleTap (e) {
       const item = e.currentTarget.dataset.item
       let passWord = this.data.passWord
-      if (passWord.length < 12) {
+      if (passWord.length < this.data.passLength) {
         passWord.push(item)
         this.setData({
           passWord
@@ -42,6 +45,20 @@ Component({
           type: 'warning'
         })
       }
+    },
+    /**
+     * 重置
+     */
+    clear () {
+      this.setData({
+        passWord: []
+      })
+    },
+    /**
+     * 确定
+     */
+    confirm () {
+      console.log(this.data.passWord)
     }
   },
 
