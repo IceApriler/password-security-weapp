@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.4",
 	"appid": "wx9fcc504cff13a057",
-	"projectname": "pass-keeper",
+	"projectname": "password-security-weapp",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
