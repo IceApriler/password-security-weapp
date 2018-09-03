@@ -1,0 +1,55 @@
+/* components/num-lock/index.wxss */
+.num-lock {
+  width: 100vw;
+  height: 100vh;
+}
+
+.progress {
+  min-height: 50rpx;
+  padding: 10rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  margin: 0 10rpx;
+  display: block;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 100%;
+  background-color: #19BE6B;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.item-col {
+  width: 150rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  border: 2rpx solid #19BE6B;
+  border-radius: 100%;
+  text-align: center;
+  margin: 20rpx;
+  font-size: 40rpx;
+  transition: all .2s ease 0s;
+}
+.key-hover {
+  background-color: #19BE6B;
+  transition: all 0s ease 0s;
+  color: #fff;
+}
+
+.bottom {
+  padding-top: 20rpx;
+}
