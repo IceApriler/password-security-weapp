@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "num-lock": "/components/num-lock/index",
+    "i-message": "/libs/message/index"
+  }
+}

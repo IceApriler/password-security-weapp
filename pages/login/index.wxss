@@ -1,1 +1,6 @@
 /* pages/login/index.wxss */
+.btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
