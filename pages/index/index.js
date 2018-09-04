@@ -1,5 +1,5 @@
 // pages/index/index.js
-let CryptoJS = require("../../utils/crypto-js/index.js")
+let { CryptoJS, Encrypt, Decrypt } = require("../../utils/util.js")
 //获取应用实例
 const app = getApp()
 
@@ -12,9 +12,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    key: '',
-    iv: ''
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   getUserInfo (e) {
     console.log(e)
@@ -24,38 +22,13 @@ Page({
       hasUserInfo: true
     })
   },
-  //加密方法
-  Encrypt(word) {
-    // encode to utf8
-    let srcs = CryptoJS.enc.Utf8.parse(word)
-    let { key, iv } = this.data
-    let encrypted = CryptoJS.AES.encrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 })
-    // 加密后得到的密文还不是字符串。encrypted，是一个密码参数对象。
-    // 加密参数对象允许您访问加密过程中使用的所有参数。比如iv, key, raw ciphertext itself.
-    // 返回base64加密字符串
-    return encrypted.ciphertext.toString().toUpperCase()
-  },
-  Decrypt(word) {
-    // 格式化为CryptoJS格式
-    let encryptedHexStr = CryptoJS.enc.Hex.parse(word)
-    // base64解密
-    let srcs = CryptoJS.enc.Base64.stringify(encryptedHexStr)
-    let { key, iv } = this.data
-    let decrypt = CryptoJS.AES.decrypt(srcs, key, { iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 })
-    let decryptedStr = decrypt.toString(CryptoJS.enc.Utf8)
-    return decryptedStr.toString()
-  },
   entry() {
     const key256Bits = CryptoJS.PBKDF2("Secret Passphrase", 'salt', { keySize: 256 / 32 })
     const iv16 = CryptoJS.enc.Hex.parse('hehe')
     const key = CryptoJS.enc.Utf8.parse(key256Bits)  //十六位十六进制数作为密钥
     const iv = CryptoJS.enc.Utf8.parse(iv16)   //十六位十六进制数作为密钥偏移量
-    this.setData({
-      key,
-      iv
-    })
-    let str = this.Encrypt('你好')
-    let str2 = this.Decrypt(str)
+    let str = Encrypt('你好', { key, iv })
+    let str2 = Decrypt(str, { key, iv })
     console.log(str, str.length)
     console.log(str2)
   },
