@@ -1,5 +1,5 @@
 <!--pages/login/index.wxml-->
 <view class='container'>
-  <num-lock></num-lock>
+  <num-lock bind:confirm="confirm"></num-lock>
 </view>
 <i-message id="message" />

@@ -7,6 +7,17 @@ Page({
   data: {
 
   },
+  confirm (e) {
+    const passWord = e.detail.passWord
+    console.log(passWord)
+    if (passWord.length) {
+      const _passWord = passWord.join('')
+      console.log(_passWord)
+      wx.navigateTo({
+        url: '/pages/index/index',
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

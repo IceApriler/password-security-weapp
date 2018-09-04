@@ -57,8 +57,11 @@ Component({
     /**
      * 确定
      */
-    confirm () {
-      console.log(this.data.passWord)
+    confirm() {
+      const detail = {
+        passWord: this.data.passWord
+      }
+      this.triggerEvent('confirm', detail, {})
     }
   },
 
