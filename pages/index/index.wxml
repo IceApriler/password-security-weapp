@@ -11,3 +11,7 @@
     <view class="user-motto">{{motto}}</view>
   </view>
 </view>
+<i-tab-bar current="{{ current }}" fixed bindchange="handleChange">
+    <i-tab-bar-item key="/pages/index/index" icon="remind" current-icon="remind_fill" count="3" title="Notice"></i-tab-bar-item>
+    <i-tab-bar-item key="/pages/mine/mine" icon="mine" current-icon="mine_fill" dot title="My"></i-tab-bar-item>
+</i-tab-bar>

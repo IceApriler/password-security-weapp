@@ -1,13 +1,23 @@
 {
   "pages": [
-    "pages/login/index",
+    "pages/mine/mine",
     "pages/index/index",
-    "pages/mine/mine"
+    "pages/login/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "密码安全管家",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/mine/mine"
+      }
+    ]
   }
 }

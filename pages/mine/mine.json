@@ -1,1 +1,6 @@
-{}
+{
+  "usingComponents": {
+    "i-tab-bar": "/libs/tab-bar/index",
+    "i-tab-bar-item": "/libs/tab-bar-item/index"
+  }
+}

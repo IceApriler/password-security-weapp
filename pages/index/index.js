@@ -9,10 +9,16 @@ Page({
    * 页面的初始数据
    */
   data: {
+    current: '/pages/index/index',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
+  },
+  handleChange({ detail }) {
+    wx.switchTab({
+      url: detail.key
+    })
   },
   getUserInfo (e) {
     console.log(e)

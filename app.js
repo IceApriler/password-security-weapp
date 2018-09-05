@@ -1,4 +1,5 @@
 //app.js
+wx.hideTabBar()
 App({
   onLaunch: function () {
     // 登录
